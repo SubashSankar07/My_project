@@ -1,0 +1,13 @@
+version: '3'
+services:
+  icc-streamlit:
+    container_name: icc-streamlit
+    hostname: icc-streamlit
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    ports:
+      - 8501:8501
+    restart: unless-stopped
+    logging:
+      driver: gelf
